@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --paper: #FAF3E6;
+    --paper-card: #FFFDF8;
+    --ink: #22291F;
+    --ink-soft: #5B6355;
+    --stamp: #B3261E;
+    --gold: #D6A419;
+    --spine: #2F6657;
+    --spine-2: #1F4E42;
+    --line: rgba(34, 41, 31, 0.14);
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--paper);
+    color: var(--ink);
+    font-family: 'Public Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+    min-height: 100vh;
+  }
+
+  /* Subtle vintage paper pulp texture */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: radial-gradient(rgba(34, 41, 31, 0.035) 1px, transparent 1px);
+    background-size: 4px 4px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Smooth scrollbars with vintage feel */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #FAF3E6;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #2F6657;
+    border-radius: 3px;
+  }
+}
+
+.font-display {
+  font-family: 'Fraunces', serif;
+}
+
+.font-mono {
+  font-family: 'Space Mono', monospace;
+}
+
+.font-sans {
+  font-family: 'Public Sans', sans-serif;
+}
+
+/* Stamp styles */
+.stamp-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 50%;
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.15;
+  background: rgba(250, 243, 230, 0.95);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+@keyframes scroll-ticker {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-ticker {
+  display: flex;
+  white-space: nowrap;
+  animation: scroll-ticker 25s linear infinite;
+}
+
+.animate-ticker:hover {
+  animation-play-state: paused;
+}

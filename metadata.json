@@ -1,0 +1,6 @@
+{
+  "name": "Panna — Second-Hand & New Books Marketplace",
+  "description": "Buy and sell quality-checked used and new books at honest prices with condition verification, instant book buyback quotes, and pan-India delivery.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

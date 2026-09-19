@@ -1,0 +1,77 @@
+{
+  "entities": {
+    "users": {
+      "description": "User profiles, wallet balances, reading goals, and preferences",
+      "fields": {
+        "uid": { "type": "string", "description": "User UID matching auth uid" },
+        "name": { "type": "string", "description": "Display name" },
+        "email": { "type": "string", "description": "Email address" },
+        "avatarUrl": { "type": "string", "description": "Photo URL" },
+        "phone": { "type": "string", "description": "Phone number" },
+        "pannaCoins": { "type": "number", "description": "Reward coins" },
+        "walletBalance": { "type": "number", "description": "Panna wallet store credit in INR" },
+        "readingGoal": { "type": "object", "description": "Reading challenge target and completed count" },
+        "savedAddresses": { "type": "array", "description": "User delivery addresses" },
+        "wishlist": { "type": "array", "description": "Saved book IDs" },
+        "role": { "type": "string", "description": "Role: customer or admin" },
+        "createdAt": { "type": "string", "description": "Account creation timestamp" }
+      }
+    },
+    "orders": {
+      "description": "Customer purchase orders",
+      "fields": {
+        "userId": { "type": "string", "description": "UID of the user who placed the order" },
+        "customerEmail": { "type": "string", "description": "Email of the customer" },
+        "items": { "type": "array", "description": "Cart items list" },
+        "subtotal": { "type": "number", "description": "Order subtotal" },
+        "discount": { "type": "number", "description": "Discount applied" },
+        "deliveryCharge": { "type": "number", "description": "Delivery fee" },
+        "donation": { "type": "number", "description": "Library donation" },
+        "coinsUsed": { "type": "number", "description": "Panna coins redeemed" },
+        "total": { "type": "number", "description": "Total order amount in INR" },
+        "shippingAddress": { "type": "object", "description": "Delivery address" },
+        "paymentMethod": { "type": "string", "description": "Payment mode" },
+        "status": { "type": "string", "description": "Order status" },
+        "estimatedDelivery": { "type": "string", "description": "Estimated delivery date" },
+        "trackingNumber": { "type": "string", "description": "Courier AWB number" },
+        "createdAt": { "type": "string", "description": "Timestamp" }
+      }
+    },
+    "sellRequests": {
+      "description": "Book Dump seller pickup requests",
+      "fields": {
+        "userId": { "type": "string", "description": "UID of the seller" },
+        "books": { "type": "array", "description": "Books submitted for valuation" },
+        "totalQuote": { "type": "number", "description": "Total buyout quote" },
+        "payoutMode": { "type": "string", "description": "Payout option: wallet, upi, or bank" },
+        "pickupAddress": { "type": "object", "description": "Address for doorstep pickup" },
+        "pickupSlot": { "type": "string", "description": "Scheduled pickup slot" },
+        "status": { "type": "string", "description": "Current status" },
+        "createdAt": { "type": "string", "description": "Timestamp" }
+      }
+    },
+    "books": {
+      "description": "Book catalog inventory",
+      "fields": {
+        "title": { "type": "string", "description": "Title of the book" },
+        "author": { "type": "string", "description": "Author name" },
+        "category": { "type": "string", "description": "Category" },
+        "price": { "type": "number", "description": "Price in INR" },
+        "mrp": { "type": "number", "description": "MRP in INR" },
+        "condition": { "type": "string", "description": "Condition grade" },
+        "stock": { "type": "number", "description": "Available copies" }
+      }
+    },
+    "reviews": {
+      "description": "Verified reader book reviews",
+      "fields": {
+        "bookId": { "type": "string", "description": "ID of reviewed book" },
+        "userId": { "type": "string", "description": "UID of reviewer" },
+        "userName": { "type": "string", "description": "Display name" },
+        "rating": { "type": "number", "description": "Star rating 1-5" },
+        "comment": { "type": "string", "description": "Review text" },
+        "date": { "type": "string", "description": "Date string" }
+      }
+    }
+  }
+}
